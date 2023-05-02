@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: eureka-server
+  zipkin:
+    enabled: false
+server:
+  port: 8761
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    eureka-server-connect-timeout-seconds: 60
+    eureka-service-url-poll-interval-seconds: 15
+    use-dns-for-fetching-service-urls: false
+    prefer-same-zone-eureka: true
+    healthcheck:
+      enabled: true
+  instance:
+    hostname: eureka-server
+    lease-renewal-interval-in-seconds: 20
+    lease-expiration-duration-in-seconds: 70

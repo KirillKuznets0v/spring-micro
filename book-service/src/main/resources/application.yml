@@ -1,0 +1,28 @@
+server:
+  port: 0
+spring:
+  application:
+    name: book-service
+  sleuth:
+    sampler:
+      probability: 2.0
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: mydb
+      authentication-database: admin
+      username: root
+      password: root
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+    enabled: true
+    register-with-eureka: true
+    fetch-registry: false
+  instance:
+    prefer-ip-address: true
+logging:
+  file:
+    name: C:\logs\application.log

@@ -1,0 +1,20 @@
+server:
+  port: 0
+spring:
+  application:
+    name: service-b
+  sleuth:
+    sampler:
+      probability: 2.0
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+    enabled: true
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true
+feign:
+  circuitbreaker:
+    enabled: true
